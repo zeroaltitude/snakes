@@ -27,8 +27,8 @@ PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67
 
 def draw_dots(draw):
     DOTS.clear()
-    for x in range(GRID[0]):
-        for y in range(GRID[1]):
+    for y in range(GRID[1]):
+        for x in range(GRID[0]):
             gridx = (x * (SIZE[0] - 1) // (GRID[0] - 1)) - x
             gridy = (y * (SIZE[1] - 1) // (GRID[1] - 1)) - y
             print((gridx, gridy, gridx + DOTRADIUS, gridy + DOTRADIUS))
