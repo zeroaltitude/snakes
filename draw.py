@@ -56,7 +56,7 @@ def draw_lines(draw, snake_chars):
 def single_image_output(snake_chars, snake_id, trans=False):
     snake_png = "snake_%s.png" % snake_id
     print("snake img %s" % snake_png)
-    im = init_image(MODE, SIZE, BGCOLOR, trans=False)
+    im = init_image(MODE, SIZE, BGCOLOR, trans=trans)
     draw = get_draw(im)
     draw_dots(draw)
     # print("snake chars to draw is: %s" % snake_chars)
@@ -154,13 +154,6 @@ def init_image(mode, size, bgcolor, trans=False):
 
 def get_draw(im):
     return ImageDraw.Draw(im)
-
-
-def test():
-    im = init_image(MODE, SIZE, BGCOLOR, trans=False)
-    draw = get_draw(im)
-    draw_dots(draw)
-    im.save("test.png")
 
 
 def calculate_word(word):
