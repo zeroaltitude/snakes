@@ -175,17 +175,21 @@ def calculate_word(word):
     return val
 
 
-def main(word, single_word_images, can_x, can_y):
+def main(word, single_word_images, can_x, can_y, trans):
+    if trans == 1:
+        trans = True
+    else:
+        trans = False
     if single_word_images == 1:
         print("single word images!")
         single_word_images = True
     else:
         print("single big canvas!")
         single_word_images = False
-    draw_snakes_main(word, trans=False, single_word_images=single_word_images, can_x=can_x, can_y=can_y)
+    draw_snakes_main(word, trans=trans, single_word_images=single_word_images, can_x=can_x, can_y=can_y)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        raise Exception("draw.py word single_word_images(1|0) can_x(0|255) can_y(0|255)")
-    main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
+    if len(sys.argv) != 6:
+        raise Exception("draw.py word single_word_images(1|0) can_x(0|255) can_y(0|255) trans(0|1)")
+    main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]))
