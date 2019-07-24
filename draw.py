@@ -35,7 +35,7 @@ def draw_lines(draw, snake_chars):
             gridby = DOTS[selected[1]][1]
             xy = (gridax, griday, gridbx, gridby)
             # print("guessing coords %s, %s, %s, %s\n" % xy)
-            draw.line(xy, fill=LINECOLOR, width=1, joint=None)
+            draw.line(xy, fill=LINECOLOR, width=1, join=None)
 
 
 def single_image_output(snake_chars, snake_id, trans=False):
