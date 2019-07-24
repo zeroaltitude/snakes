@@ -153,6 +153,24 @@ def calculate_word(word):
     return val
 
 
+def decode(binary):
+    binary = int(binary[::-1], 2)
+    print("got %s" % binary)
+    for i, prime in enumerate(PRIMES):
+        j = 0
+        while True:
+            if binary < 3:
+                break
+            elif binary % prime == 0:
+                binary = binary // prime
+                j += 1
+            else:
+                break
+        print("character %s is letter %s" % (i, j))
+        if binary < 3:
+            break
+
+
 def main(word, single_word_images, can_x, can_y, trans):
     if trans == 1:
         trans = True
